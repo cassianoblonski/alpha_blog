@@ -6,9 +6,18 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    # render plain: params[:article].inspect
     @article = Article.new(article_params)
-    @article.save
+    if @article.save
+      # flash => show only 1 time, if the page got refreshed the msg goes away
+      flash[:notice] = "Article was sucessfully created"
+      redirect_to article_path(@article)
+    else
+      render 'new' #or render :new
+    end
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
 
   private
