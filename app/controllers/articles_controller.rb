@@ -13,7 +13,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    #debugger
     @article = Article.new(article_params)
+    @article.user = User.first
     if @article.save
       # flash => show only 1 time, if the page got refreshed the msg goes away
       flash[:success] = "Article was sucessfully created"
