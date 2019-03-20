@@ -17,6 +17,15 @@ $navbar-default-bg: #141414;
   text-decoration: none;
 }
 
+#user-profile-link a {
+  color: #262626;
+}
+
+#user-profile-link a:hover {
+  background-color: transparent;
+}
+
+
 .center {
   text-align: center;
 }
@@ -74,8 +83,6 @@ $navbar-default-bg: #141414;
   list-style: none;
   padding-left: 0px;
 }
-
-
 
 footer {
   margin-top: 45px;
