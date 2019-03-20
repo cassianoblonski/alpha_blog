@@ -23,16 +23,21 @@ $navbar-default-bg: #141414;
 
 .jumbotron {
   background-image: asset-url("cavalo.jpg");
+  background-repeat:no-repeat;
   background-size: cover;
+  background-position:center;
   height: 505px;
+
 }
 
 .jumbotron h1 {
-  color: #111;
+  /*color: #111;*/
+  color: lightblue;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 90px;
   letter-spacing: -1px;
   font-weight: bold;
+  -webkit-text-stroke: 1px black;
 }
 
 .btn-xlarge {

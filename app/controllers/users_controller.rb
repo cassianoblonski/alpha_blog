@@ -1,5 +1,6 @@
 class UsersController <  ApplicationController
-  before_action :set_user, only: [:edit, :update, :show, :destroy]
+  before_action :set_user, only: [:edit, :update, :show]
+  before_action :require_same_user, only: [:edit, :update]
 
   def index
     @users = User.paginate(page: params[:page], per_page: 5)
@@ -36,9 +37,6 @@ class UsersController <  ApplicationController
     @user_articles = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 
-  def destroy
-  end
-
   private
     def set_user
       @user = User.find(params[:id])
@@ -48,4 +46,10 @@ class UsersController <  ApplicationController
       params.require(:user).permit(:username, :email, :password)
     end
 
+    def require_same_user
+      if  current_user != @user
+          flash[:danger] = "You can't edit this account"
+          redirect_to root_path
+      end
+    end
 end
