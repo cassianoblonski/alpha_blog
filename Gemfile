@@ -15,7 +15,10 @@ gem 'will_paginate', '~>3.1.5'
 gem 'bootstrap-will_paginate', '~>1.0.0'
 
 # Updated bootstrap from 3.3.7 to 3.4.1 to avoid security issues
-gem "bootstrap-sass", ">= 3.4.1"
+gem 'bootstrap-sass', '>= 3.4.1'
+
+# Testing
+gem 'rails-controller-testing'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
